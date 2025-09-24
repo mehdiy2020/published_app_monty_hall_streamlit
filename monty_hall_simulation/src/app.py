@@ -1,5 +1,4 @@
 import streamlit as st
-import pandas as pd
 from random import choice, shuffle
 from typing import Tuple
 
@@ -102,14 +101,10 @@ st.markdown("""
 The Monty Hall Paradox is a famous probability puzzle based on a game show. A contestant picks one of three doors. Behind one door is a **car**, and behind the other two are **goats**.
 
 ---
-
 ### Why Switching Wins More 🏎️
-After you pick a door, the host (who knows where the car is) opens a different door to reveal a goat. You are then given a choice: **stick** with your original door or **switch** to the other unopened door.
+When you first choose, your door has a 1/3 chance of winning. The other two doors, combined, have a 2/3 chance. The host's action of revealing a goat behind one of them doesn't change those initial probabilities. Instead, it concentrates the entire 2/3 chance onto the single remaining unopened door.
 
-- **Sticking**: Your original choice had a **1/3** chance of being right. The host's action doesn't change this probability. If you stick with your first choice, you'll win about **33%** of the time.
-- **Switching**: When you first chose, the other two doors collectively had a **2/3** chance of having the car. The host revealing a goat concentrates that entire **2/3** probability onto the single remaining unopened door. By switching, you're taking the higher probability, and will win about **67%** of the time.
-
-The host's action gives you valuable new information, making switching the superior strategy.
+Therefore, sticking keeps your original 1/3 chance, while switching gives you a 2/3 chance of winning.
 
 ###### Rememver As you select the door, host always reveal a Goat that is behind the other door 
 """, unsafe_allow_html=True)
@@ -118,12 +113,9 @@ with st.sidebar:
   st.markdown(
     """
     ### Monty Hall Simulation
-    In this app, the player doesn't choose a door. Instead, the app simulates the game many times to calculate the win/loss percentages for two different strategies:
+    This app simulates the Monty Hall game many times to prove which strategy is better: staying with your initial choice or switching to the other door.
 
-    1.  **Staying** with the initial door.
-    2.  **Switching** to the other unopened door.
-
-    Your only role is to select a strategy and the number of times you want the game to be played. The results will then show you which strategy is more likely to win in the long run.
+    You simply select a strategy and the number of games to play. The results will show you the win/loss percentages for each strategy, revealing which one is more likely to win over time.
     """
 )
 
